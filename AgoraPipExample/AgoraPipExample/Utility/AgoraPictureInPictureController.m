@@ -1,0 +1,61 @@
+//
+//  AgoraPictureInPictureController.m
+//  AgoraPipExample
+//
+//  Created by Yuhua Hu on 2022/12/01.
+//
+
+#import "AgoraPictureInPictureController.h"
+
+@interface AgoraPictureInPictureController () <AVPictureInPictureSampleBufferPlaybackDelegate, AVAudioPlayerDelegate>
+
+@property (nonatomic, strong) AVPictureInPictureController *pipController;
+
+@property (nonatomic, strong) AgoraSampleBufferRender *displayView;
+
+@property (nonatomic, strong) AVAudioPlayer *player;
+
+@end
+
+@implementation AgoraPictureInPictureController
+
+- (instancetype)initWithDisplayView:(AgoraSampleBufferRender *)displayView {
+    if (@available(iOS 15.0, *)) {
+        if ([AVPictureInPictureController isPictureInPictureSupported]) {
+            self = [super init];
+            if (self) {
+                _displayView = displayView;
+                AVPictureInPictureControllerContentSource *pipControllerContentSource = [[AVPictureInPictureControllerContentSource alloc] initWithSampleBufferDisplayLayer:_displayView.displayLayer playbackDelegate:self];
+                
+                _pipController = [[AVPictureInPictureController alloc] initWithContentSource:pipControllerContentSource];
+                // Start picture in picture when go to background
+                _pipController.canStartPictureInPictureAutomaticallyFromInline = true;
+            }
+            return self;
+        }
+    }
+    return nil;
+}
+
+#pragma mark - <AVPictureInPictureSampleBufferPlaybackDelegate>
+
+- (void)pictureInPictureController:(nonnull AVPictureInPictureController *)pictureInPictureController didTransitionToRenderSize:(CMVideoDimensions)newRenderSize {
+    
+}
+
+- (void)pictureInPictureController:(nonnull AVPictureInPictureController *)pictureInPictureController setPlaying:(BOOL)playing {
+    
+}
+
+- (void)pictureInPictureController:(nonnull AVPictureInPictureController *)pictureInPictureController skipByInterval:(CMTime)skipInterval completionHandler:(nonnull void (^)(void))completionHandler {
+    
+}
+
+- (BOOL)pictureInPictureControllerIsPlaybackPaused:(nonnull AVPictureInPictureController *)pictureInPictureController {
+    return NO;
+}
+
+- (CMTimeRange)pictureInPictureControllerTimeRangeForPlayback:(nonnull AVPictureInPictureController *)pictureInPictureController {
+    return CMTimeRangeMake(kCMTimeZero, CMTimeMake(INT64_MAX, 1000));
+}
+@end

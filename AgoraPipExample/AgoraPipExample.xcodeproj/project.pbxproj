@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9CA8342079BF8FBD4CDEA3EE /* Pods_AgoraPipExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036CAA049FEB46415C0F5A2B /* Pods_AgoraPipExample.framework */; };
+		B700C5702938504D0029974E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B700C56F2938504D0029974E /* AppDelegate.m */; };
+		B700C5732938504D0029974E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B700C5722938504D0029974E /* SceneDelegate.m */; };
+		B700C5762938504D0029974E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B700C5752938504D0029974E /* HomeViewController.m */; };
+		B700C5792938504D0029974E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B700C5772938504D0029974E /* Main.storyboard */; };
+		B700C57B2938504E0029974E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B700C57A2938504E0029974E /* Assets.xcassets */; };
+		B700C57E2938504E0029974E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B700C57C2938504E0029974E /* LaunchScreen.storyboard */; };
+		B700C5812938504E0029974E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B700C5802938504E0029974E /* main.m */; };
+		B700C58B2938711E0029974E /* AgoraSampleBufferRender.m in Sources */ = {isa = PBXBuildFile; fileRef = B700C58A2938711E0029974E /* AgoraSampleBufferRender.m */; };
+		B700C58E293871460029974E /* AgoraPictureInPictureController.m in Sources */ = {isa = PBXBuildFile; fileRef = B700C58D293871460029974E /* AgoraPictureInPictureController.m */; };
+		B700C590293875390029974E /* AgoraMetalShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = B700C58F293875390029974E /* AgoraMetalShader.metal */; };
+		B700C593293876E10029974E /* LiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B700C592293876E10029974E /* LiveViewController.m */; };
+		B700C596293893B10029974E /* SampleBufferDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B700C595293893B10029974E /* SampleBufferDisplayView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		036CAA049FEB46415C0F5A2B /* Pods_AgoraPipExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AgoraPipExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E01CB42299D875A5501ABBD /* Pods-AgoraPipExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraPipExample.release.xcconfig"; path = "Target Support Files/Pods-AgoraPipExample/Pods-AgoraPipExample.release.xcconfig"; sourceTree = "<group>"; };
+		B700C56B2938504D0029974E /* AgoraPipExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgoraPipExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B700C56E2938504D0029974E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B700C56F2938504D0029974E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B700C5712938504D0029974E /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		B700C5722938504D0029974E /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		B700C5742938504D0029974E /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		B700C5752938504D0029974E /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		B700C5782938504D0029974E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B700C57A2938504E0029974E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B700C57D2938504E0029974E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B700C57F2938504E0029974E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B700C5802938504E0029974E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B700C5892938711E0029974E /* AgoraSampleBufferRender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgoraSampleBufferRender.h; sourceTree = "<group>"; };
+		B700C58A2938711E0029974E /* AgoraSampleBufferRender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgoraSampleBufferRender.m; sourceTree = "<group>"; };
+		B700C58C293871460029974E /* AgoraPictureInPictureController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgoraPictureInPictureController.h; sourceTree = "<group>"; };
+		B700C58D293871460029974E /* AgoraPictureInPictureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgoraPictureInPictureController.m; sourceTree = "<group>"; };
+		B700C58F293875390029974E /* AgoraMetalShader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AgoraMetalShader.metal; sourceTree = "<group>"; };
+		B700C591293876E10029974E /* LiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveViewController.h; sourceTree = "<group>"; };
+		B700C592293876E10029974E /* LiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiveViewController.m; sourceTree = "<group>"; };
+		B700C594293893B10029974E /* SampleBufferDisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleBufferDisplayView.h; sourceTree = "<group>"; };
+		B700C595293893B10029974E /* SampleBufferDisplayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleBufferDisplayView.m; sourceTree = "<group>"; };
+		BAA2C91A54482C373B3941D4 /* Pods-AgoraPipExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraPipExample.debug.xcconfig"; path = "Target Support Files/Pods-AgoraPipExample/Pods-AgoraPipExample.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B700C5682938504D0029974E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CA8342079BF8FBD4CDEA3EE /* Pods_AgoraPipExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1EB5932AE504018131D5CA35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				036CAA049FEB46415C0F5A2B /* Pods_AgoraPipExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82D35D6D1AE8AE9B3F106570 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BAA2C91A54482C373B3941D4 /* Pods-AgoraPipExample.debug.xcconfig */,
+				0E01CB42299D875A5501ABBD /* Pods-AgoraPipExample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B700C5622938504D0029974E = {
+			isa = PBXGroup;
+			children = (
+				B700C56D2938504D0029974E /* AgoraPipExample */,
+				B700C56C2938504D0029974E /* Products */,
+				82D35D6D1AE8AE9B3F106570 /* Pods */,
+				1EB5932AE504018131D5CA35 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B700C56C2938504D0029974E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B700C56B2938504D0029974E /* AgoraPipExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B700C56D2938504D0029974E /* AgoraPipExample */ = {
+			isa = PBXGroup;
+			children = (
+				B700C5882938704F0029974E /* Utility */,
+				B700C5872938703F0029974E /* UI */,
+				B700C56E2938504D0029974E /* AppDelegate.h */,
+				B700C56F2938504D0029974E /* AppDelegate.m */,
+				B700C5712938504D0029974E /* SceneDelegate.h */,
+				B700C5722938504D0029974E /* SceneDelegate.m */,
+				B700C57A2938504E0029974E /* Assets.xcassets */,
+				B700C57C2938504E0029974E /* LaunchScreen.storyboard */,
+				B700C57F2938504E0029974E /* Info.plist */,
+				B700C5802938504E0029974E /* main.m */,
+			);
+			path = AgoraPipExample;
+			sourceTree = "<group>";
+		};
+		B700C5872938703F0029974E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B700C5772938504D0029974E /* Main.storyboard */,
+				B700C5742938504D0029974E /* HomeViewController.h */,
+				B700C5752938504D0029974E /* HomeViewController.m */,
+				B700C591293876E10029974E /* LiveViewController.h */,
+				B700C592293876E10029974E /* LiveViewController.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B700C5882938704F0029974E /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B700C58F293875390029974E /* AgoraMetalShader.metal */,
+				B700C5892938711E0029974E /* AgoraSampleBufferRender.h */,
+				B700C58A2938711E0029974E /* AgoraSampleBufferRender.m */,
+				B700C58C293871460029974E /* AgoraPictureInPictureController.h */,
+				B700C58D293871460029974E /* AgoraPictureInPictureController.m */,
+				B700C594293893B10029974E /* SampleBufferDisplayView.h */,
+				B700C595293893B10029974E /* SampleBufferDisplayView.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B700C56A2938504D0029974E /* AgoraPipExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B700C5842938504E0029974E /* Build configuration list for PBXNativeTarget "AgoraPipExample" */;
+			buildPhases = (
+				60F201BFAEE5D04CA5640433 /* [CP] Check Pods Manifest.lock */,
+				B700C5672938504D0029974E /* Sources */,
+				B700C5682938504D0029974E /* Frameworks */,
+				B700C5692938504D0029974E /* Resources */,
+				EC492AC66D5FBC9BB2982D2A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AgoraPipExample;
+			productName = AgoraPipExample;
+			productReference = B700C56B2938504D0029974E /* AgoraPipExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B700C5632938504D0029974E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					B700C56A2938504D0029974E = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = B700C5662938504D0029974E /* Build configuration list for PBXProject "AgoraPipExample" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B700C5622938504D0029974E;
+			productRefGroup = B700C56C2938504D0029974E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B700C56A2938504D0029974E /* AgoraPipExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B700C5692938504D0029974E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B700C57E2938504E0029974E /* LaunchScreen.storyboard in Resources */,
+				B700C57B2938504E0029974E /* Assets.xcassets in Resources */,
+				B700C5792938504D0029974E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		60F201BFAEE5D04CA5640433 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AgoraPipExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC492AC66D5FBC9BB2982D2A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AgoraPipExample/Pods-AgoraPipExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AgoraPipExample/Pods-AgoraPipExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AgoraPipExample/Pods-AgoraPipExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B700C5672938504D0029974E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B700C5762938504D0029974E /* HomeViewController.m in Sources */,
+				B700C5702938504D0029974E /* AppDelegate.m in Sources */,
+				B700C590293875390029974E /* AgoraMetalShader.metal in Sources */,
+				B700C58B2938711E0029974E /* AgoraSampleBufferRender.m in Sources */,
+				B700C5812938504E0029974E /* main.m in Sources */,
+				B700C5732938504D0029974E /* SceneDelegate.m in Sources */,
+				B700C596293893B10029974E /* SampleBufferDisplayView.m in Sources */,
+				B700C593293876E10029974E /* LiveViewController.m in Sources */,
+				B700C58E293871460029974E /* AgoraPictureInPictureController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B700C5772938504D0029974E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B700C5782938504D0029974E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B700C57C2938504E0029974E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B700C57D2938504E0029974E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B700C5822938504E0029974E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B700C5832938504E0029974E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B700C5852938504E0029974E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAA2C91A54482C373B3941D4 /* Pods-AgoraPipExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XA393XM8GG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AgoraPipExample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.darkzero.AgoraPipExample.AgoraPipExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B700C5862938504E0029974E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E01CB42299D875A5501ABBD /* Pods-AgoraPipExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XA393XM8GG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AgoraPipExample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.darkzero.AgoraPipExample.AgoraPipExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B700C5662938504D0029974E /* Build configuration list for PBXProject "AgoraPipExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B700C5822938504E0029974E /* Debug */,
+				B700C5832938504E0029974E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B700C5842938504E0029974E /* Build configuration list for PBXNativeTarget "AgoraPipExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B700C5852938504E0029974E /* Debug */,
+				B700C5862938504E0029974E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B700C5632938504D0029974E /* Project object */;
+}
