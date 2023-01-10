@@ -9,11 +9,12 @@
 #import "LiveViewController.h"
 #import "AgoraPictureInPictureController.h"
 #import "SampleBufferDisplayView.h"
+#import <QuartzCore/QuartzCore.h>
 
-@interface LiveViewController () <AgoraRtcEngineDelegate, AgoraVideoDataFrameProtocol, AVPictureInPictureControllerDelegate>
+@interface LiveViewController () <AgoraRtcEngineDelegate, AgoraVideoDataFrameProtocol, AVPictureInPictureControllerDelegate, CALayerDelegate>
 @property (nonatomic, weak) AgoraRtcEngineKit* agoraEngine;
 @property (nonatomic, strong) AgoraPictureInPictureController* pipController;
-@property (nonatomic, weak) IBOutlet SampleBufferDisplayView* remoteVideoView;
+@property (nonatomic, strong) IBOutlet SampleBufferDisplayView* remoteVideoView;
 @end
 
 @implementation LiveViewController
@@ -33,7 +34,10 @@
     // Setup raw video data frame observer
     [self.agoraEngine setVideoDataFrame: self];
     
-    [self.remoteVideoView setPlaceHolder: @"remote host"];
+    [self.remoteVideoView setPlaceHolder: @"remote video"];
+    [self.remoteVideoView setInfo:@"Live info here. Just for test"];
+    
+    self.remoteVideoView.videoView.displayLayer.delegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -60,6 +64,7 @@
 }
 
 - (void)willMoveToParentViewController:(UIViewController *)parent {
+    NSLog(@"will move to parent view controller.");
     if (parent == nil) {
         
     }
@@ -121,5 +126,75 @@
 }
 
 // MARK: - AVPictureInPictureControllerDelegate
+
+- (void)pictureInPictureControllerWillStartPictureInPicture:(AVPictureInPictureController *)pictureInPictureController {
+    NSLog(@"will start pip");
+//    [self.remoteVideoView.videoView setHidden: YES];
+    pictureInPictureController.requiresLinearPlayback = NO;
+//    [self.remoteVideoView setAlpha: 0.0];
+    
+    BOOL a = _remoteVideoView.videoView.displayLayer.hidden; //[self.remoteVideoView.videoView.layer.sublayers containsObject: _remoteVideoView.videoView.displayLayer];
+    NSLog(@"will start pip %d", a);
+//    [_remoteVideoView.videoView.displayLayer setHidden: YES];
+}
+
+- (void)pictureInPictureControllerDidStartPictureInPicture:(AVPictureInPictureController *)pictureInPictureController {
+    NSLog(@"did start pip");
+    
+//    BOOL a = [self.remoteVideoView.videoView.layer.sublayers containsObject: _remoteVideoView.videoView.displayLayer];
+    BOOL a = _remoteVideoView.videoView.displayLayer.hidden;
+    NSLog(@"did start pip %d", a);
+}
+
+- (void)pictureInPictureController:(AVPictureInPictureController *)pictureInPictureController failedToStartPictureInPictureWithError:(NSError *)error {
+    NSLog(@"%@", error.localizedDescription);
+}
+
+- (void)pictureInPictureControllerWillStopPictureInPicture:(AVPictureInPictureController *)pictureInPictureController {
+    NSLog(@"will stop pip");
+    
+    //    BOOL a = [self.remoteVideoView.videoView.layer.sublayers containsObject: _remoteVideoView.videoView.displayLayer];
+    BOOL a = _remoteVideoView.videoView.displayLayer.hidden;
+    NSLog(@"will stop pip %d", a);
+}
+
+- (void)pictureInPictureControllerDidStopPictureInPicture:(AVPictureInPictureController *)pictureInPictureController {
+    NSLog(@"did stop pip");
+//    [UIView animateWithDuration:0.33 delay:0.5 options: nil animations:^{
+//        [self.remoteVideoView setAlpha: 1.0];
+//    } completion:^(BOOL finished) {
+//        //
+//    }];
+    
+//    BOOL a = [self.remoteVideoView.videoView.layer.sublayers containsObject: _remoteVideoView.videoView.displayLayer];
+    BOOL a = _remoteVideoView.videoView.displayLayer.hidden;
+    NSLog(@"did stop pip %d", a);
+}
+
+- (void)pictureInPictureController:(AVPictureInPictureController *)pictureInPictureController restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:(void (^)(BOOL))completionHandler {
+    NSLog(@"restore ui");
+}
+
+
+// CALayerDelegate
+- (void)displayLayer:(CALayer *)layer {
+    NSLog(@"displayLayer");
+}
+
+- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx {
+    NSLog(@"drawLayer inContext");
+}
+
+- (void)layerWillDraw:(CALayer *)layer {
+    NSLog(@"layerWillDraw");
+}
+
+- (void)layoutSublayersOfLayer:(CALayer *)layer {
+    NSLog(@"layoutSublayersOfLayer: %f", ((AVSampleBufferDisplayLayer*)layer).frame.size.width);
+}
+
+//- (nullable id<CAAction>)actionForLayer:(CALayer *)layer forKey:(NSString *)event {
+//
+//}
 
 @end

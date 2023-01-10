@@ -10,7 +10,6 @@
 
 @interface SampleBufferDisplayView ()
 @property (nonatomic, weak) IBOutlet UILabel* placeHolderLabel;
-//@property (nonatomic, weak) IBOutlet AgoraSampleBufferRender* videoView;
 @property (nonatomic, weak) IBOutlet UILabel* infoLabel;
 @end
 

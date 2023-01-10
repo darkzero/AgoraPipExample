@@ -7,7 +7,7 @@
 
 #import "AgoraSampleBufferRender.h"
 
-@interface AgoraSampleBufferRender () {
+@interface AgoraSampleBufferRender() <CALayerDelegate> {
     NSInteger _videoWidth, _videoHeight;
 }
 
@@ -22,19 +22,22 @@
         _displayLayer = [AVSampleBufferDisplayLayer new];
     }
     
+//    _displayLayer.videoGravity = AVLayerVideoGravityResizeAspect;
+//    _displayLayer.opaque = YES;
     return _displayLayer;
 }
 
 - (instancetype)init {
     if (self = [super init]) {
-        [self.layer addSublayer:self.displayLayer];
+        self.displayLayer.delegate = self;
+        [self.layer addSublayer: self.displayLayer];
     }
     return self;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self.layer addSublayer:self.displayLayer];
+    [self.layer addSublayer: self.displayLayer];
 }
 
 - (void)layoutSubviews {
@@ -58,7 +61,7 @@
     if (videoRatio >= viewRatio) {
         videoSize.height = viewHeight;
         videoSize.width = videoSize.height * videoRatio;
-    }else {
+    } else {
         videoSize.width = viewWidth;
         videoSize.height = videoSize.width / videoRatio;
     }
@@ -66,12 +69,13 @@
     CGRect renderRect = CGRectMake(0.5 * (viewWidth - videoSize.width), 0.5 * (viewHeight - videoSize.height), videoSize.width, videoSize.height);
 
     if (!CGRectEqualToRect(renderRect, self.displayLayer.frame)) {
+        NSLog(@"reset displayLayer frame");
         self.displayLayer.frame = renderRect;
     }
 }
 
 - (void)reset {
-    [self.displayLayer flushAndRemoveImage];
+    //[self.displayLayer flushAndRemoveImage];
 }
 
 - (void)renderVideoData:(AgoraVideoDataFrame *_Nonnull)videoData {
@@ -83,8 +87,10 @@
         self->_videoWidth = videoData.width;
         self->_videoHeight = videoData.height;
         
+        //NSLog(@"%d, %d", videoData.width, videoData.height);
         [self layoutDisplayLayer];
     });
+    
     size_t width = videoData.width;
     size_t height = videoData.height;
     size_t yStride = videoData.yStride;
@@ -111,7 +117,7 @@
 
         if (yStride == pixelBufferYBytes) {
             memcpy(yPlane, yBuffer, yStride*height);
-        }else {
+        } else {
             for (int i = 0; i < height; ++i) {
                 memcpy(yPlane + pixelBufferYBytes * i, yBuffer + yStride * i, MIN(yStride, pixelBufferYBytes));
             }
@@ -121,7 +127,7 @@
         int pixelBufferUBytes = (int)CVPixelBufferGetBytesPerRowOfPlane(pixelBuffer, 1);
         if (uStride == pixelBufferUBytes) {
             memcpy(uPlane, uBuffer, uStride*height/2);
-        }else {
+        } else {
             for (int i = 0; i < height/2; ++i) {
                 memcpy(uPlane + pixelBufferUBytes * i, uBuffer + uStride * i, MIN(uStride, pixelBufferUBytes));
             }
@@ -131,7 +137,7 @@
         int pixelBufferVBytes = (int)CVPixelBufferGetBytesPerRowOfPlane(pixelBuffer, 2);
         if (vStride == pixelBufferVBytes) {
             memcpy(vPlane, vBuffer, vStride*height/2);
-        }else {
+        } else {
             for (int i = 0; i < height/2; ++i) {
                 memcpy(vPlane + pixelBufferVBytes * i, vBuffer + vStride * i, MIN(vStride, pixelBufferVBytes));
             }
@@ -156,6 +162,29 @@
         
         CVPixelBufferRelease(pixelBuffer);
     }
+}
+
+// MARK: - <CALayerDelegate>
+// Try to find how to fix the blink
+- (void)displayLayer:(CALayer *)layer {
+    NSLog(@"CALayerDelegate - displayLayer");
+}
+
+- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx {
+    NSLog(@"CALayerDelegate - drawLayer inContext");
+}
+
+- (void)layerWillDraw:(CALayer *)layer {
+    NSLog(@"CALayerDelegate - layerWillDraw");
+}
+
+- (void)layoutSublayersOfLayer:(CALayer *)layer {
+    NSLog(@"CALayerDelegate - layoutSublayersOfLayer");
+}
+
+- (nullable id<CAAction>)actionForLayer:(CALayer *)layer forKey:(NSString *)event {
+    NSLog(@"CALayerDelegate - actionForLayer %@", event);
+    return nil;
 }
 
 @end

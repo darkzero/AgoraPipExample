@@ -17,7 +17,6 @@
 		B700C5812938504E0029974E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B700C5802938504E0029974E /* main.m */; };
 		B700C58B2938711E0029974E /* AgoraSampleBufferRender.m in Sources */ = {isa = PBXBuildFile; fileRef = B700C58A2938711E0029974E /* AgoraSampleBufferRender.m */; };
 		B700C58E293871460029974E /* AgoraPictureInPictureController.m in Sources */ = {isa = PBXBuildFile; fileRef = B700C58D293871460029974E /* AgoraPictureInPictureController.m */; };
-		B700C590293875390029974E /* AgoraMetalShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = B700C58F293875390029974E /* AgoraMetalShader.metal */; };
 		B700C593293876E10029974E /* LiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B700C592293876E10029974E /* LiveViewController.m */; };
 		B700C596293893B10029974E /* SampleBufferDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B700C595293893B10029974E /* SampleBufferDisplayView.m */; };
 /* End PBXBuildFile section */
@@ -41,7 +40,6 @@
 		B700C58A2938711E0029974E /* AgoraSampleBufferRender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgoraSampleBufferRender.m; sourceTree = "<group>"; };
 		B700C58C293871460029974E /* AgoraPictureInPictureController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgoraPictureInPictureController.h; sourceTree = "<group>"; };
 		B700C58D293871460029974E /* AgoraPictureInPictureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgoraPictureInPictureController.m; sourceTree = "<group>"; };
-		B700C58F293875390029974E /* AgoraMetalShader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AgoraMetalShader.metal; sourceTree = "<group>"; };
 		B700C591293876E10029974E /* LiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveViewController.h; sourceTree = "<group>"; };
 		B700C592293876E10029974E /* LiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiveViewController.m; sourceTree = "<group>"; };
 		B700C594293893B10029974E /* SampleBufferDisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleBufferDisplayView.h; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 		B700C5882938704F0029974E /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				B700C58F293875390029974E /* AgoraMetalShader.metal */,
 				B700C5892938711E0029974E /* AgoraSampleBufferRender.h */,
 				B700C58A2938711E0029974E /* AgoraSampleBufferRender.m */,
 				B700C58C293871460029974E /* AgoraPictureInPictureController.h */,
@@ -255,7 +252,6 @@
 			files = (
 				B700C5762938504D0029974E /* HomeViewController.m in Sources */,
 				B700C5702938504D0029974E /* AppDelegate.m in Sources */,
-				B700C590293875390029974E /* AgoraMetalShader.metal in Sources */,
 				B700C58B2938711E0029974E /* AgoraSampleBufferRender.m in Sources */,
 				B700C5812938504E0029974E /* main.m in Sources */,
 				B700C5732938504D0029974E /* SceneDelegate.m in Sources */,
